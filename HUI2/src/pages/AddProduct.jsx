@@ -107,7 +107,7 @@ function AddProduct() {
             } else {
 
                 await axios.post(
-                    '${API}/products',
+                    `${API}/products`,
                     payload
                 );
 
