@@ -6,6 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.example.HerbalLife.entity.Order;
+import com.example.HerbalLife.service.EmailService;
 
 @Service
 public class EmailServiceImpl implements EmailService {
