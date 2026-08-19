@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL;
 
 function AddProduct() {
 
@@ -33,7 +34,7 @@ function AddProduct() {
         try {
 
             const response = await axios.get(
-                `http://localhost:8082/products/${pid}`
+                `${API}/products/${pid}`
             );
 
             setProduct(response.data);
@@ -97,7 +98,7 @@ function AddProduct() {
             if (pid) {
 
                 await axios.put(
-                    `http://localhost:8082/products/${pid}`,
+                    `${API}/products/${pid}`,
                     payload
                 );
 
@@ -106,7 +107,7 @@ function AddProduct() {
             } else {
 
                 await axios.post(
-                    "http://localhost:8082/products",
+                    "${API}/products",
                     payload
                 );
 

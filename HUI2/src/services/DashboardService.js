@@ -1,4 +1,4 @@
 import axios from "axios";
 
 export const getDashboardStats = () =>
-    axios.get("http://localhost:8082/admin/dashboard-stats");
+axios.get(`${import.meta.env.VITE_API_URL}/admin/dashboard-stats`);

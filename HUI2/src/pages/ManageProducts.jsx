@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+const API = import.meta.env.VITE_API_URL;
 
 function ManageProducts() {
 
@@ -18,7 +19,7 @@ function ManageProducts() {
         try {
 
             const response = await axios.get(
-                "http://localhost:8082/products"
+                "${API}/products"
             );
 
             setProducts(response.data);
@@ -44,7 +45,7 @@ function ManageProducts() {
         try {
 
             await axios.delete(
-                `http://localhost:8082/products/${id}`
+                `${API}/products/${id}`
             );
 
             setProducts(products.filter(p => p.pid !== id));

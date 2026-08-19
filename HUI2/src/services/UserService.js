@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8082/users";
-
+const API = `${import.meta.env.VITE_API_URL}/users`;
 export const getAllUsers = () => axios.get(`${API}/all`);
 
 export const updateUserRole = (id, role) =>

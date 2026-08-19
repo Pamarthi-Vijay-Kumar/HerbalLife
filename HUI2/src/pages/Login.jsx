@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+const API = import.meta.env.VITE_API_URL;
 
 function Login() {
 
@@ -25,7 +26,7 @@ function Login() {
     try {
 
         const response = await axios.post(
-            "http://localhost:8082/login",
+            "${API}/login",
             user
         );
 

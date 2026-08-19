@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8082/wishlist";
-
+const API = `${import.meta.env.VITE_API_URL}/wishlist`;
 export const getWishlist = (email) => axios.get(`${API}/${email}`);
 
 export const addToWishlist = (item) => axios.post(API, item);

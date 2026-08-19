@@ -5,6 +5,7 @@ import { addToCart } from "../services/CartService";
 import { getReviews, addReview } from "../services/ReviewService";
 import { addToWishlist, removeFromWishlist, checkWishlist } from "../services/WishlistService";
 import { getRelatedProducts } from "../services/ProductService";
+const API = import.meta.env.VITE_API_URL;
 
 function ProductDetails() {
 
@@ -123,7 +124,7 @@ function ProductDetails() {
     const loadProduct = async () => {
 
         const response = await axios.get(
-            `http://localhost:8082/products/${pid}`
+            `${API}/products/${pid}`
         );
 
         setProduct(response.data);

@@ -4,6 +4,7 @@ import { placeOrder } from "../services/OrderService";
 import { createRazorpayOrder, verifyPayment } from "../services/PaymentService";
 import { validateCoupon } from "../services/CouponService";
 import axios from "axios";
+const API = import.meta.env.VITE_API_URL;
 
 function Checkout() {
 
@@ -137,7 +138,7 @@ function Checkout() {
             if (!buyNow && item.id) {
 
                 await axios.delete(
-                    `http://localhost:8082/cart/${item.id}`
+                    `${API}/cart/${item.id}`
                 );
 
             }
@@ -295,7 +296,7 @@ function Checkout() {
                 "Failed To Start Payment.\n\n" +
                 (backendMessage
                     ? "Reason: " + backendMessage
-                    : "Check that the backend is running and reachable at localhost:8082.")
+                    : "Unable to connect to the backend. Please try again later.")
             );
 
             setPlacing(false);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API_URL;
 
 function Register() {
 
@@ -25,7 +26,7 @@ function Register() {
     try {
 
         const response = await axios.post(
-            "http://localhost:8082/register",
+            "${API}/register",
             user
         );
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8082/payment";
-
+const API = `${import.meta.env.VITE_API_URL}/payment`;
 export const createRazorpayOrder = (amount) =>
     axios.post(`${API}/create-order`, { amount });
 
