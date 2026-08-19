@@ -19,7 +19,7 @@ function ManageProducts() {
         try {
 
             const response = await axios.get(
-                "${API}/products"
+                `${API}/products`
             );
 
             setProducts(response.data);

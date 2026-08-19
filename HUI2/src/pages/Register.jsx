@@ -26,7 +26,7 @@ function Register() {
     try {
 
         const response = await axios.post(
-            "${API}/register",
+            `${API}/register`, 
             user
         );
 
